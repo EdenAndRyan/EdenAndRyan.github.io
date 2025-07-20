@@ -15,4 +15,7 @@ document.getElementById('rsvp-form')?.addEventListener('submit', function(event)
   event.preventDefault();
   alert('Thank you for your RSVP!');
   this.reset();
+  setTimeout(() => {
+    window.location.href = 'index.html';  // Redirect to main page
+  }, 500); // Delay allows user to see alert
 });
