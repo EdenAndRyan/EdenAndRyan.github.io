@@ -130,7 +130,7 @@ input, textarea {
   position: relative;
   overflow: hidden;
   font-weight: bold;
-  font-family: 'JuliusSansOne', sans-serif; /* ✅ Use FAQ font */
+  font-family: 'IMFellEnglish', sans-serif; /* ✅ Use FAQ font */
 }
 
 .boton-elegante::after {
