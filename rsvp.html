@@ -1,28 +1,31 @@
 <form id="rsvp-form">
-  <input type="text" name="firstName" placeholder="First Name" required>
-  <input type="text" name="lastName" placeholder="Last Name" required>
-  <input type="number" name="attending" placeholder="Number Attending" required>
-  <textarea name="notes" placeholder="Additional Notes"></textarea>
-  <button type="submit">Submit</button>
+  <input name="firstName" placeholder="First Name" required />
+  <input name="lastName" placeholder="Last Name" required />
+  <input name="attending" type="number" placeholder="Attending" required />
+  <textarea name="notes" placeholder="Notes"></textarea>
+  <button type="submit">Submit RSVP</button>
 </form>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbweh22JVesGIdbfpBiv5r394uozFJfd1MtBUHx13RgOm1HOrTlRz9uMAW74pxBHycgR1w/exec'; // replace with the actual Web App URL
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbweh22JVesGIdbfpBiv5r394uozFJfd1MtBUHx13RgOm1HOrTlRz9uMAW74pxBHycgR1w/exec';
 
   document.getElementById('rsvp-form').addEventListener('submit', e => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
+    const form = e.target;
+    const formData = new FormData(form);
 
     fetch(scriptURL, {
       method: 'POST',
-      body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' }
+      body: formData // Do NOT set content-type!
     })
-    .then(() => {
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
       alert('Thank you for your RSVP!');
       window.location.href = 'index.html';
     })
-    .catch(err => alert('Error submitting RSVP'));
+    .catch(error => {
+      console.error('Error!', error.message);
+      alert('Error submitting RSVP. Try again later.');
+    });
   });
 </script>
