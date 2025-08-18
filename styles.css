@@ -196,7 +196,7 @@ input, textarea {
   height: 100vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 200% 100%; /* stretch image to span both halves */
+  background-size: 100% 100%; /* stretch image to span both halves */
   z-index: -1;              /* stays behind main content */
 }
 
