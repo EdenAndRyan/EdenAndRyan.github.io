@@ -187,7 +187,7 @@ input, textarea {
 /* Parallax side panels */
 .parallax-side {
   flex: 1;
-  background-image: url('your-image.jpg');   /* replace with your image */
+  background-image: url('stars.png');   /* replace with your image */
   background-attachment: fixed;              /* parallax effect */
   background-size: cover;
   background-position: center;
