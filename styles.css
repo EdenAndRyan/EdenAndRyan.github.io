@@ -64,7 +64,8 @@ p {
   margin-top: 3rem;
   margin-bottom: 1rem;
   font-size: 1.5rem;
-  text-transform: uppercase;
+  /*text-transform: uppercase;
+*/
   letter-spacing: 1px;
 }
 
