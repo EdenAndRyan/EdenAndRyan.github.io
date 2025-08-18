@@ -170,38 +170,49 @@ input, textarea {
   background: #292929;
 }
 /*                      */
+/* Wrapper */
 .page-wrapper {
   display: flex;
-  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Main content centered */
+.main-content {
+  flex: 1;
+  z-index: 2;
+  background: white; /* ensures no overlap from sides */
   position: relative;
 }
 
-/* Main content area in the middle */
-.main-content {
-  width: 60%;               /* adjust as needed */
-  background: white;         /* keeps text readable */
-  z-index: 2;
-  padding: 2rem;
-}
-
-/* Parallax side panels */
+/* Side parallax panels */
 .parallax-side {
-  flex: 1;
-  background-image: url('stars.png');   /* replace with your image */
-  background-attachment: fixed;              /* parallax effect */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 25vw; /* each side takes 25% of screen */
+  background-image: url('your-image.jpg');
   background-size: cover;
-  background-position: center;
-  min-height: 100vh;
+  background-attachment: fixed; /* parallax effect */
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
-/* Disable parallax for narrow screens */
+.parallax-side.left {
+  left: 0;
+  background-position: left center;
+}
+
+.parallax-side.right {
+  right: 0;
+  background-position: right center;
+}
+
+/* Hide side panels on smaller screens */
 @media (max-width: 900px) {
   .parallax-side {
-    display: none;           /* hide side panels on small screens */
-  }
-  .main-content {
-    width: 100%;             /* main content takes full width */
+    display: none;
   }
 }
-
 /*                      */
