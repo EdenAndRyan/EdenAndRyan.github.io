@@ -186,33 +186,50 @@ input, textarea {
   position: relative;
 }
 
-/* Side parallax panels */
+/* ✅ Parallax background panels */
 .parallax-side {
   position: fixed;
   top: 0;
-  bottom: 0;
-  width: 25vw; /* each side takes 25% of screen */
-  background-image: url('stars.png');
-  background-size: cover;
-  background-attachment: fixed; /* parallax effect */
+  width: 25vw;              /* each side takes 1/4 of the screen */
+  height: 100vh;
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  z-index: 1;
+  background-size: 200% 100%; /* stretch image to span both halves */
+  z-index: -1;              /* stays behind main content */
 }
 
+/* Left half of the stars image */
 .parallax-side.left {
   left: 0;
+  background-image: url('stars.png');
   background-position: left center;
 }
 
+/* Right half of the stars image */
 .parallax-side.right {
   right: 0;
+  background-image: url('stars.png');
   background-position: right center;
 }
 
-/* Hide side panels on smaller screens */
+/* ✅ Center content stays on top */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 50vw;          /* center column size */
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;        /* optional: gives contrast */
+}
+
+/* ✅ Hide parallax backgrounds on small screens */
 @media (max-width: 900px) {
   .parallax-side {
     display: none;
+  }
+
+  .container {
+    max-width: 100%;
   }
 }
 /*                      */
