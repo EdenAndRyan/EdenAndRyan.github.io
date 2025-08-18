@@ -192,7 +192,7 @@ input, textarea {
   top: 0;
   bottom: 0;
   width: 25vw; /* each side takes 25% of screen */
-  background-image: url('your-image.jpg');
+  background-image: url('stars.png');
   background-size: cover;
   background-attachment: fixed; /* parallax effect */
   background-repeat: no-repeat;
