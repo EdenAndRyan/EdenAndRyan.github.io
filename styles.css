@@ -169,3 +169,39 @@ input, textarea {
   border-color: #666666;
   background: #292929;
 }
+/*                      */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Main content area in the middle */
+.main-content {
+  width: 60%;               /* adjust as needed */
+  background: white;         /* keeps text readable */
+  z-index: 2;
+  padding: 2rem;
+}
+
+/* Parallax side panels */
+.parallax-side {
+  flex: 1;
+  background-image: url('your-image.jpg');   /* replace with your image */
+  background-attachment: fixed;              /* parallax effect */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+/* Disable parallax for narrow screens */
+@media (max-width: 900px) {
+  .parallax-side {
+    display: none;           /* hide side panels on small screens */
+  }
+  .main-content {
+    width: 100%;             /* main content takes full width */
+  }
+}
+
+/*                      */
