@@ -8,8 +8,8 @@
   src: url('IMFellEnglish-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'Birthstone';
-  src: url('Birthstone-Regular.ttf') format('truetype');
+  font-family: 'AlexBrush';
+  src: url('AlexBrush-Regular.ttf') format('truetype');
 }
 body {
   margin: 0;
@@ -60,7 +60,7 @@ p {
 }
 
 .names {
-  font-family: 'Birthstone', cursive;
+  font-family: 'AlexBrush', sans-serif;
   margin-top: 3rem;
   margin-bottom: 1rem;
   font-size: 1.5rem;
