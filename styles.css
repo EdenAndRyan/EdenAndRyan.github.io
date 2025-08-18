@@ -7,7 +7,10 @@
   font-family: 'IMFellEnglish';
   src: url('IMFellEnglish-Regular.ttf') format('truetype');
 }
-
+@font-face {
+  font-family: 'IMFellEnglish';
+  src: url('Parisienne-Regular.ttf') format('truetype');
+}
 body {
   margin: 0;
   padding: 0;
